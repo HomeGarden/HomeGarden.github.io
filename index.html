@@ -1,4 +1,32 @@
-<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"></iframe>
+
+
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ 
+<style type="text/css">
+ body { background-color: white; }
+</style>
+ 
+ 
+ <script type="text/javascript">
+ function lightOn(){
+ $.post('https://api.thingspeak.com/talkbacks/TALKBACKID/commands.json?apikey=FNHOELGCCIWBHV4A&command_string=TURN_ON&position=1');
+ }
+ function lightOn(){
+ $.post('https://api.thingspeak.com/talkbacks/TALKBACKID/commands.json?apikey=FNHOELGCCIWBHV4A&command_string=TURN_OFF&position=2');
+ }
+</script>
+
+ 
+</head>
+<body>
+<button onclick="lightOn()">Light On</button>
+  <button onclick="lightOff()">Light Off</button>
+
+
+  <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"></iframe>
 
 
 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidit%C3%A9+air&type=line"></iframe>
@@ -8,3 +36,5 @@
 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Luminosit%C3%A9&type=line"></iframe>
 
 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/apps/plugins/234503"></iframe>
+</body>
+</html>
