@@ -12,10 +12,10 @@
  
  <script type="text/javascript">
  function lightOn(){
- $.post('https://api.thingspeak.com/talkbacks/TALKBACKID/commands.json?apikey=FNHOELGCCIWBHV4A&command_string=TURN_ON&position=1');
+ $.post('https://api.thingspeak.com/update?key=CWCPT6WS57BOWHCW&field7=15');
  }
- function lightOn(){
- $.post('https://api.thingspeak.com/talkbacks/TALKBACKID/commands.json?apikey=FNHOELGCCIWBHV4A&command_string=TURN_OFF&position=2');
+ function lightOff(){
+ $.post('https://api.thingspeak.com/update?key=CWCPT6WS57BOWHCW&field7=0');
  }
 </script>
 
