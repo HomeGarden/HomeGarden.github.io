@@ -13,9 +13,20 @@
  
  
  <script type="text/javascript">
- function lightOn(){
- $.post('https://api.thingspeak.com/update?key=CWCPT6WS57BOWHCW&field7=15');
- }
+ function lightOn(data){
+ 	$(document).ready(function(){
+ $.post('https://api.thingspeak.com/update.json',
+{
+              api_key: "CWCPT6WS57BOWHCW",
+              field7: data
+ },
+ function(){});
+ alert ("Sent: "+data+" to field 7");
+});
+      }
+
+
+
  function lightOff(){
  $.post('https://api.thingspeak.com/update?key=CWCPT6WS57BOWHCW&field7=0');
  }
