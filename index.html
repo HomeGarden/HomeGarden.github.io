@@ -14,16 +14,15 @@
  
  <script type="text/javascript">
  function lightOn(data){
- 	$(document).ready(function(){
  $.post('https://api.thingspeak.com/update.json',
 {
               api_key: "CWCPT6WS57BOWHCW",
               field7: data
  },
- function(){});
+)
  alert ("Sent: "+data+" to field 7");
-});
-      }
+};
+ 
 
 
 
@@ -41,6 +40,7 @@
   <button onclick="lightOn(0)">Light Off</button>
 
   <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"></iframe>
+
   <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidit%C3%A9+air&type=line"></iframe>
 
   <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidit%C3%A9+sol&type=line"></iframe>
