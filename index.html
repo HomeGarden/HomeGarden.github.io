@@ -22,13 +22,24 @@
 )
  alert ("Sent: "+data+" to field 7");
 };
- 
+function lightOn(data){
+ $.post('https://api.thingspeak.com/update.json',
+{
+              api_key: "CWCPT6WS57BOWHCW",
+              field7: data
+ },
+)
+ alert ("Sent: "+data+" to field 7");
+};
 
-
-
- function lightOff(){
- $.post('https://api.thingspeak.com/update?key=CWCPT6WS57BOWHCW&field7=0');
- }
+ function allumpump(){
+ $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=1&position=1'');
+ alert ("Pump allumer");
+};
+function eteindrepump(){
+ $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=0&position=0'');
+ alert ("Pump allumer");
+};
 </script>
 
 
@@ -36,8 +47,8 @@
 </head>
 <body>
 
-  <button onclick="lightOn(15)">Light On</button>
-  <button onclick="lightOn(0)">Light Off</button>
+  <button onclick="allumpump()">Light On</button>
+  <button onclick="eteindrepump()">Light Off</button>
 
   <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"></iframe>
 
