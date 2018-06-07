@@ -34,9 +34,11 @@ function lightOn(data){
 
  function allumpump(){
  $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_ON&position=1'');
+ 	alert ("Sent TURN_ON to field 7");
 };
 function eteindrepump(){
  $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2'');
+ 	alert ("Sent TURN_OFF to field 7");
 };
 </script>
 
@@ -45,8 +47,8 @@ function eteindrepump(){
 </head>
 <body>
 
-  <button onclick="allumpump()">Light On</button>
-  <button onclick="eteindrepump()">Light Off</button>
+  <button onclick="allumpump()">Light ONN</button>
+  <button onclick="eteindrepump()">Light OFF</button>
 
   <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/508790/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"></iframe>
 
