@@ -37,3 +37,35 @@ box-shadow:0 0 15px hsl(0,50%,46%)
 }
 
 }	
+
+.votre_bouton1{
+
+background:linear-gradient(135deg, #17ead9 0%,#6078ea 100%);
+
+
+}
+
+.votre_bouton1:hover{
+
+animation:nom_anim_bouton1 1s infinite alternate
+
+}
+
+
+
+
+@keyframes nom_anim_bouton1{
+
+from{
+
+box-shadow:0 0 5px #6078ea
+
+}
+
+to{
+
+box-shadow:0 0 15px hsl(230, 77%, 25%) 
+
+}
+
+}
