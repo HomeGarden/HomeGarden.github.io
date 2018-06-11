@@ -2,3 +2,38 @@ p
 {
     color: blue;
 }
+
+button{
+margin: 2rem auto;
+max-width:400px;
+border:none;
+color: white;
+border-radius: .25rem;
+font-size: 1.125rem;
+padding: 20px 60px;
+cursor:pointer
+
+}	
+
+
+.votre_bouton{
+
+background:linear-gradient(135deg, #F5515F 0%,#A1051D 100%);
+animation: nom_anim_bouton 1s infinite alternate
+
+}
+
+@keyframes nom_anim_bouton{
+
+from{
+
+box-shadow:0 0 5px hsl(0,53%,46%)
+
+}
+to{
+
+box-shadow:0 0 15px hsl(0,50%,46%)
+
+}
+
+}	
