@@ -2,7 +2,11 @@
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}
+article,aside,details,figcaption,figure,footer,main,menu,nav,section,summary{display:block}
+header{
+    color: lightyellow;
+    background: #4c6580;
+  }
 header{
     text-align: center;
     padding: 10px;
