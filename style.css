@@ -1,8 +1,17 @@
-p
-{
-    color: blue;
-}
+header{
+    color: lightyellow;
+    background: #4c6580;
+  }
 
+header{
+    text-align: center;
+    padding: 10px;
+    margin-left: 0;
+    background-image: url("../header.png");
+    background-size: 100%;
+    font-size: 120%;
+/*    display: inline-block;*/
+  }
 button{
 margin: 2rem auto;
 max-width:400px;
