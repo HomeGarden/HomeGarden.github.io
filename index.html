@@ -39,6 +39,13 @@ function eteindrepump(){
  $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
  	alert ("ETEINDRE LA POMPE");
 };
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
 </script>
 
 
@@ -50,8 +57,8 @@ function eteindrepump(){
     <h1 align= center > Smart Garden</h1>
     </div>
 
- <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-  <h3 class="w3-bar-item">Menu</h3>
+ <<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
   <a href="https://louisjusselin.github.io/" class="w3-bar-item w3-button">Contrôle du pot</a>
   <a href="#" class="w3-bar-item w3-button">Explications</a>
   <a href="#" class="w3-bar-item w3-button">Crédits</a>
