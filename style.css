@@ -62,6 +62,13 @@ animation:nom_anim_bouton1 1s infinite alternate
 
 
 
+iframe:focus { 
+    outline: none;
+}
+
+iframe[seamless] { 
+    display: block;
+}
 
 @keyframes nom_anim_bouton1{
 
@@ -83,3 +90,5 @@ box-shadow:0 0 15px hsl(230, 77%, 25%)
 footer{
     font-size: 130%;
     background: #ffffff;
+
+
