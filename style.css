@@ -64,6 +64,7 @@ animation:nom_anim_bouton1 1s infinite alternate
 
 iframe:focus { 
     outline: none;
+    border: none;
 }
 
 iframe[seamless] { 
