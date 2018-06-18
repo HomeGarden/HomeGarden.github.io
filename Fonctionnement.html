@@ -4,17 +4,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
+dy>
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large w3-btn">Close &times;</button>
+  <a href="https://louisjusselin.github.io/" class="w3-bar-item w3-button">Contrôle du pot</a>
+  <a href="Fonctionnement.html" class="w3-bar-item w3-button">Explications</a>
+  <a href="#" class="w3-bar-item w3-button">Crédits</a>
+</div>
+
+  <div class="w3-teal">
+  <button class="w3-btn w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+    <span align = center class="w3-bar-item">Smart Pot</span>
+
+</div>
 
 <div class="w3-container">
-  <h2>Avatar List</h2>
-  <p>You can combine w3-ul and the w3-bar classes to create an avatar list:</p>
+  <h2>Liste des élements</h2>
+  <p>Cliquez sur un élements pour avoir des explications :</p>
   <ul class="w3-ul w3-card-4">
     <li class="w3-bar">
       <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
       <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
       <div class="w3-bar-item">
-        <span class="w3-large">Mike</span><br>
-        <span>Web Designer</span>
+        <span class="w3-large">Arduino Uno</span><br>
       </div>
     </li>
 
@@ -22,7 +34,7 @@
       <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
       <img src="img_avatar5.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
       <div class="w3-bar-item">
-        <span class="w3-large">Jill</span><br>
+        <span class="w3-large">Node mCU</span><br>
         <span>Support</span>
       </div>
     </li>
