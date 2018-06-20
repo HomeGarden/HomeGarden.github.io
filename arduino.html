@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="icon" type="image/png" href="plant.png" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script type="text/javascript">
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+ </script>
+<body>
+
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large w3-btn">Close &times;</button>
+  <a href="https://louisjusselin.github.io/" class="w3-bar-item w3-button">Contrôle du pot</a>
+  <a href="Fonctionnement.html" class="w3-bar-item w3-button">Explications</a>
+  <a href="#" class="w3-bar-item w3-button">Crédits</a>
+</div>
+
+  <div class="w3-green">
+  <button class="w3-btn w3-green w3-xlarge" onclick="w3_open()">☰</button>
+    <span align = "center" class="w3-bar-item">Smart Pot</span>
+</div>
+
+<div class="w3-container">
+<h2> Presentation de L'arduino</h2> 
+<p>Notre projet d'objet connecté nécessite obligatoirement un microcontrôleur programmable comme les cartes Arduino. Il possède différentes entrées/sorties permettant respectivement d'analyser et produire des signaux électriques.<br />
+Il existe plusieurs types de cartes, à différents prix et pours diverses utilisations. Nous avons utilisé la carte Arduino Mega présentée en figure 1. Ce modèle dispose de 16 entrées analogiques </p>
+<figure>
+<img src="arduino.png" width="20%" height="20%" >
+<figcaption> <font size="1"> figure 1: Arduino UNO </font></figcaption>
+</figure>
+
+
+
+
+
+
+</div>
+<div class="w3-container w3-green">
+  <p align= center> Projet réalisé par Louis Jusselin et Guillaume Richou
+ Polytech Lille</p>
+</div>
+
+</body>
+</html>
