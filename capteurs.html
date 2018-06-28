@@ -68,11 +68,11 @@ La réalisation de cette étape a été faite grâce à un capteur numérique de
 </figure>
 </div>
 
-
+<div class="w3-container">
 <div class="w3-container w3-light-gray">
 <h4> Principe de fonctionnement </h4>
 </div>
-<div class="w3-container">
+
 <h5> Comment fonctionne la prise de mesure du capteur DHT22 ?</h5>
 
 <ul>
@@ -94,9 +94,12 @@ La réalisation de cette étape a été faite grâce à un capteur numérique de
     <li>Pour la dernière étape, le capteur transmet à l'Arduino une série de 5 octets. Les deux premiers correspondent aux mesures en humidité, les deux suivants correspondant aux mesures en températures et le cinquième octets contient une série de valeurs de contrôle permettant de vérifier que les données sont correctement lues.</li>
 </ol>
  </div>
+
+<div class="w3-container">
  <div class="w3-container w3-light-gray">
 <h4> Circuit électrique </h4>
 </div>
+
  <p>Le DHT22 est composé de 3 pins :</p>
  <ul>
     <li>VCC: alimentation en 5V. </li> 
@@ -111,19 +114,23 @@ La réalisation de cette étape a été faite grâce à un capteur numérique de
 <figcaption> <font size="1"> figure 3: Circuit électrique Capteur DHT22 </font></figcaption>
 </figure>
  <div class="w3-container w3-light-gray">
+</div>
+
+
   <h4> Code arduino </h4>
-  </div>
+
 <p> Pour pourvoir récupérer les données du DHT22, des bibliothèques sont à télécharger et sont simple d'utilisation. Ce sont des fonctions déjà codées et open source qui permettent, lorsqu'on fait appel à elles, de récupérer directement l'humidité et la température ambiante. 
 Voici ci-dessous la fonction correspondant à la prise de mesure d'humidité:</p>
    <img src="http://latex.codecogs.com/svg.latex? int humi= dht.readHumidity()" border="0"/>
 <p>et voici celle pour la prise de mesure de température. </p>
 <img src="http://latex.codecogs.com/svg.latex?int tempe = dht.readTemperature()" border="0"/>
-
+  </div>
 
 
 <div class="w3-container w3-teal">
   <h3> Capteur YL-69: Collecte de l'humidité de la terre </h3> 
 </div>
+<div class="w3-container">
 <p> L'eau est indispensable pour tous les végétaux, c'est pourquoi l'utilisation d'un capteur d'humidité est pertinent pour être informé du besoin en eau d'une plante. Le capteur YL-63 et le comparateur LM393 permettent de mesurer l'humidité de la terre du pot. Ces données sont les plus importantes du Smart pot puisqu'elles permettent le déclenchement de la pompe hydraulique.</p>
 <figure >
 <img src="capteurYL69.png" width="25%" height="25%" >
@@ -173,10 +180,11 @@ cette formule est utile pour controler le taux d'humidité dans la terre du pot 
        où 1019 correspond au minimum d'humidité mesuré avec de la terre extrêmement sèche et 375 au maximum d'humidité mesuré. La nouvelle plage de valeur est defini ici par les attributs 3 et 4 de la fonction, à savoir 0 et 100 afin de réaliser un pourcentage. </li>
  
 </ul>
+</div>
 <div class="w3-container w3-teal">
   <h3> Capteur de luminosité LM393: Collecte de la lumière</h3> 
 </div>
-
+<div class="w3-container">
 <p>    L'utilisation d'un capteur de luminosité parait évidente pour être informé de la santé d'une plante. En effet, cette dernière nécessite la lumière du soleil pour réaliser la photosynthèse. La lumière est donc indispensable pour la majorité des plantes.
    Le capteur de luminosité LM393 permets de récupérer les données sur le flux lumineux du pot. </p>
 <figure >
@@ -221,7 +229,7 @@ cette formule est utile pour controler le taux d'humidité dans la terre du pot 
 <p>La fonction map() est également utilisée:</p>
 <P><img src="http://latex.codecogs.com/svg.latex?      luminosity = map(luminosity,1023,10,0,100))" border="0"/></P> 
 <p> avec 1023 est le minimum de luminosité mesuré et 10, le maximum. </p>
-
+</div>
 
 <div class="w3-container w3-teal">
   <h3> Tableaux de données </h3> 
