@@ -29,10 +29,11 @@ function w3_close() {
   <button class="w3-btn w3-green w3-xlarge" onclick="w3_open()">☰</button>
     <span align = "center" class="w3-bar-item">Smart Pot</span>
 </div>
+
 <div class="w3-container w3-teal">
   <h3> Les capteurs du Smart pot </h3> 
 </div>
-
+<div class="w3-container">
 <p> Le smart pot plant est composé de 4 capteurs, ce qui lui permet d'avoir les informations nécessaire pour pouvoir fonctionner en autonomie.</br> 
 <p> Ces capteurs sont :</p>
    <ul>
@@ -40,7 +41,7 @@ function w3_close() {
     <li>De deux capteurs YL-69 avec comparateurs LM393 mesurant l'humidité de la terre du pot.</li>
     <li>Un capteur LM393 avec photodiode mesurant la luminosité </li>
 </ul>
-
+</div>
 
 <div class="w3-container w3-teal">
   <h3> Capteur DHT22: Collecte de la temperature et de l'humidité</h3> 
@@ -55,7 +56,7 @@ function w3_close() {
 La réalisation de cette étape a été faite grâce à un capteur numérique de température et d'humidité de l'air, le DHT22 en figure 1.</br>
  C'est l'un des capteurs les plus utilisés pour collecter des mesures métrologiques. Le DHT22 fonctionne grâce à un capteur d'humidité capacitif, d'une thermistance mesurant la température de l'air ainsi qu'un circuit intégré.
 </p>
-
+<div class="w3-container">
 <figure style="float:left">
 <img src="DHT22.png" width="50%" height="50%" >
 <figcaption> <font size="1"> figure 1: Capteur DHT22 </font></figcaption>
@@ -73,7 +74,7 @@ La réalisation de cette étape a été faite grâce à un capteur numérique de
 </div>
 
 <h5> Comment fonctionne la prise de mesure du capteur DHT22 ?</h5>
-<div class="w3-container">
+
 <ul>
     <li>Pour mesurer l'humidité, le capteur DHT-22 utilise un composant de détection d'humidité qui est composé de deux électrodes avec un substrat qui retient l'humidité entre elles. Ainsi, lorsque la valeur de résistance entre les électrodes change, le circuit intégré mesure et traite ce changement puis transmets la valeur.
       <p> </p>
@@ -92,7 +93,7 @@ La réalisation de cette étape a été faite grâce à un capteur numérique de
     <p></p>
     <li>Pour la dernière étape, le capteur transmet à l'Arduino une série de 5 octets. Les deux premiers correspondent aux mesures en humidité, les deux suivants correspondant aux mesures en températures et le cinquième octets contient une série de valeurs de contrôle permettant de vérifier que les données sont correctement lues.</li>
 </ol>
- </div>
+ 
  <div class="w3-container w3-light-gray">
 <h4> Circuit électrique </h4>
 </div>
