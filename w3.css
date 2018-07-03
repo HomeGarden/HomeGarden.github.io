@@ -16,10 +16,12 @@ header{
     font-size: 120%;
 /*    display: inline-block;*/
   }
+  
   p{
+    padding: 10px;
   margin-left: 10px;
   }
-  
+
 audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
 audio:not([controls]){display:none;height:0}[hidden],template{display:none}
 a{background-color:transparent;-webkit-text-decoration-skip:objects}
