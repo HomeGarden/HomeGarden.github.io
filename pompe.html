@@ -1,0 +1,80 @@
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="icon" type="image/png" href="plant.png" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
+<script type="text/javascript">
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+ </script>
+<body>
+
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large w3-btn">Close &times;</button>
+  <a href="https://louisjusselin.github.io/" class="w3-bar-item w3-button">Contrôle du pot</a>
+  <a href="Fonctionnement.html" class="w3-bar-item w3-button">Explications</a>
+  <a href="#" class="w3-bar-item w3-button">Crédits</a>
+</div>
+
+  <div class="w3-green">
+  <button class="w3-btn w3-green w3-xlarge" onclick="w3_open()">☰</button>
+    <span align = "center" class="w3-bar-item">Smart Pot</span>
+</div>
+
+<div class="w3-container w3-teal">
+  <h3>La pompe </h3> 
+</div>
+
+<div class="w3-container">
+<div class="w3-container w3-light-gray">
+<h4> Présentation </h4>
+</div>
+
+<p>  La pompe hydraulique est un élément clé du smart pot. C'est elle qui est contrôlable par l'utilisateur manuellement, et automatiquement par le système si l'humidité est trop faible. La pompe est constitué d'un moteur 12V YX 383 et d'un système de circulation d'eau permettant de créer une pompe hydraulique.
+</p>
+<figure >
+<img src="pompe1.png" width="30%" height="50%" >
+<figcaption> <font size="1"> figure 1: Pompe hydraulique </font></figcaption>
+</figure>
+
+
+
+ <div class="w3-container w3-light-gray">
+<h4> Caractérisation de la pompe</h4>
+  </div>
+<p> Afin de déterminer le débit de la pompe une simple expérience a été réalisée: Il a suffit d'utiliser deux récipients de 500 ml, un rempli d'eau, l'autre vide. La pompe a été ensuite activée jusqu’à que le volume d'eau du premier récipient soit totalement transféré dans celui qui était vide. Nous avons chronométré cette expérience plusieurs fois et obtenu un débit moyen de :</p>
+   <img src="http://latex.codecogs.com/svg.latex? D=28.4ml/s " border="0"/>
+<p>Pour paramétrer le mode automatique de la pompe, l'utilisation de la fonction déterminée lors de la calibration du capteur d’humidité de la terre a été utile.</p>
+<img src="http://latex.codecogs.com/svg.latex?f(x) = -222,6*ln(x) + 1111,7" border="0"/>
+<p>Un arrosage suffisant a été estimé à 80% d'humdité, correspondant à une valeur numérique de 484. En utilisant la formule ci-dessus le volume d'eau versé dans la terre correspondant à 80% d’humidité est de 166,9ml.</br>
+Grâce au débit calculé précédemment, le temps nécessaire d'activation de la pompe pour atteindre un niveau humidité désiré est de 6 secondes.</br> 
+La pompe s'active donc elle-même pour une durée de 6 secondes lorsque le capteur d’humidité de la terre envoie un pourcentage d’humidité inférieur à 10% (terre sèche) et permet ainsi de rééquilibrer le niveau d'humidité aux alentours de 80%.
+</P>
+
+
+</div>
+</div>
+
+</body>
+</html>
