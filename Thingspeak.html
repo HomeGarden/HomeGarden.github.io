@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<title>Thingspeak</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="icon" type="image/png" href="plant.png" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
+<script type="text/javascript">
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+ </script>
+<body>
+
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large w3-btn">Close &times;</button>
+  <a href="https://louisjusselin.github.io/" class="w3-bar-item w3-button">Contrôle du pot</a>
+  <a href="Fonctionnement.html" class="w3-bar-item w3-button">Explications</a>
+  <a href="#" class="w3-bar-item w3-button">Crédits</a>
+</div>
+
+  <div class="w3-green">
+  <button class="w3-btn w3-green w3-xlarge" onclick="w3_open()">☰</button>
+    <span align = "center" class="w3-bar-item">Smart Pot</span>
+</div>
+<div class="w3-container w3-teal">
+  <h3> Thingspeak </h3> 
+</div>
+ 
+
+<div class="w3-container">
+<div class="w3-container w3-light-gray">
+<h4> Configuration </h4>
+</div>
+
+<p> 
+ThingSpeak est une API et une application open source pour l'Internet des objets, permettant de stocker et de collecter les données des objets connectés en passant par le protocole \gls{http} via Internet ou un réseau local. C'est une plateforme très simple d'utilisation en relation avec le logiciel Arduino IDE. Il suffit alors de s'inscrire via le site web et de se connecter via une clé personnelle. Il est possible de rendre les données collectées publique ou de les conservées privées.
+Il est possible de créer des "channels" pour chaque projet contenant des "fields". Chaque "field" correspond à un type de données stockées. Dans notre cas, la channel contient 6 fields, correspondant à chacun des capteurs ainsi qu'un affichage de la pompe.
+</p>
+
+
+
+<div class="w3-container w3-light-gray">
+<h4> Envoi des données à Thingspeak </h4>
+</div>
+<p>Afin de publier sur Thingspeak, le nodeMCU doit se connecter à internet via la Wifi. 
+  La publication sur une channel se fait via requête \gls{http}. La fonction de publication est présentée en annexe 2. 
+ Tout d'abord, une chaîne de caractères contenant toutes les données à envoyer dans chaque field est créée. Ensuite la fonction client.print() permet d'envoyer des requêtes HTTP. HTTP est un protocole de communication client-serveur développé pour le WWW. 
+ 
+ Il est utilisé pour échanger toute sorte de données entre client et serveur HTTP. Ici le serveur est Thingspeak et le client, le NodeMCU. Il y a différents types de requêtes, appelées commandes.
+ 
+  Dans notre cas, on utilise une requête de type POST. Cette méthode est utilisée lorsqu'une requête modifie la ressource.</p>
+ 
+ <div class="w3-container w3-light-gray">
+<h4> Réaction en fonction des données </h4>
+
+<p> Thingspeak permet, en plus de la visualisation des données, d'effectuer des actions et/ou de les modifier par le biais d'applications dédiées. 
+ REACT est l'une d'entre elles. Elle permet d’entraîner certaines actions lorsque les données captées rencontrent certaines conditions. Dans le cas du pot connecté, un React concernant le taux d'humidité dans le sol a été implémente. Ce dernier est configuré de la manière suivante : à chaque fois que le taux d'humidité du sol reçu par Thingspeak est inférerieur ou égal à 10, une requête HTTP est envoyée. Sur Thingspeak, ce type de requête est une application nommée ThingHTTP.</p>
+
+
+
+ <div class="w3-container w3-light-gray">
+<h4> ThingHTTP</h4>
+  </div>
+<p> ThingHTTP permet donc de mettre en place des communications entre les différents appareils et service web via le protocole HTTP.
+Dans notre cas, le ThingHTTP entraîné par le React est de type POST et active un Talkback Thingspeak.</p>
+  
+  <div class="w3-container w3-light-gray">
+<h4> Talkback</h4>
+  </div>
+<p> Les Talbacks Thingspeak permettent d'envoyer des commandes à des appareils via un système de fil d'attente. C'est à dire que les commandes pour allumer la pompe sont mise en attente et reçue dès que possible. Par exemple, si le système est éteint, il recevra la commande à sa mise en route. Chaque Talkback a un ID et envoi une commande, ici une chaîne de caractères. Dans le cas où le Talkback est activé par le REACT,  il enverra la chaîne de caractères "TURN ON" afin d'activer la pompe.
+</p>
+
