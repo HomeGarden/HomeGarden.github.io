@@ -3,6 +3,14 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+function allumpump(){
+ $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_ON&position=1')
+ 	alert ("ALLUMAGE DE LA POMPE");
+};
+function eteindrepump(){
+ $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
+ 	alert ("ETEINDRE LA POMPE");
+};
 
 (function($) {
 
