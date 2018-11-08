@@ -12,6 +12,12 @@ function eteindrepump(){
  	alert ("ETEINDRE LA POMPE");
 };
 
+
+function recevoirdonnees(){
+ $.get('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
+ 	alert ("ETEINDRE LA POMPE");
+};
+
 (function($) {
 
 	var	$window = $(window),
