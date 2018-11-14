@@ -5,7 +5,7 @@
 */
 function allumpump(){
  $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=1')
- 	alert ("ALLUMAGE DE L'ECRAN");
+ 	alert ("ALLUMAGE DE L'ECCCCCCCCRAN");
 };
 function eteindrepump(){
  $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
