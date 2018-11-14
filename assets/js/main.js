@@ -4,8 +4,8 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 function allumpump(){
- $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_ON&position=1')
- 	alert ("ALLUMAGE DE LA POMPE");
+ $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=1')
+ 	alert ("ALLUMAGE DE L'ECRAN");
 };
 function eteindrepump(){
  $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
