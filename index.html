@@ -49,7 +49,7 @@
 									
 									<ul class="actions fit">
 										<li><a href="#" class="button primary fit" onclick="allumpump2()" >Allumer l'ecran'</a></li>
-										<li><a href="#" class="button fit" onclick="allumpump()" >Éteindre la pompe</a></li>
+										<li><a href="#" class="button fit" onclick="eteindrepump2()" >Éteindre la pompe</a></li>
 								
 									</ul>
 									<ul class="actions fit">
@@ -179,6 +179,12 @@
 	<script	>	
 		function allumpump2(){
  $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=1')
+ 	alert ("ALLUMAGE DE L'ECCCCCCCCRAN");
+};
+</script>
+<script	>	
+		function eteindrepump2(){
+ $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=0')
  	alert ("ALLUMAGE DE L'ECCCCCCCCRAN");
 };
 </script>
