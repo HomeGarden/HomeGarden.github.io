@@ -44,12 +44,22 @@
 								<h1>HomeGarden Platform </h1>
 								<p> Suivez-ici l'état de santé de votre plante </p>
 							</header>
+							<section id="localWeather" class="whole">
+      <h2>Local Weather Conditions at: <input type="text" id="cityNameInput" name="fname" value="Lo Barnechea">
+      <button onclick="getCityData()">Show Data</button>
+      <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/white.png" width="134" height="29"/> </a>
+      </h2>
+      
+      <p id="local_weather1"></p>
+      <p id="local_weather2"></p>
+      <p id="local_weather3"></p>
+    </section>
 							<section>
 									
 									
 									<ul class="actions fit">
-										<li><a href="#" class="button primary fit" onclick="allumpump2()" >Allumer l'ecran'</a></li>
-										<li><a href="#" class="button fit" onclick="eteindrepump2()" >Éteindre la pompe</a></li>
+										<li><a href="#" class="button primary fit" onclick="changeField7(1)" >Allumer l'ecran'</a></li>
+										<li><a href="#" class="button fit" onclick="changeField7(0)" >Éteindre la pompe</a></li>
 								
 									</ul>
 									<ul class="actions fit">
@@ -59,7 +69,10 @@
 									</ul>
 									
 																	</section>
-
+<section class="whole">
+      <h2>Analog Sensors</h2>
+      <div id="chart_div"></div>
+    </section>
 							<section class="tiles">
 								<article class="style1">
 								
@@ -176,6 +189,18 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://www.gstatic.com/charts/loader.js"></script>
+   			<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script> 
+   			<script src='https://www.google.com/jsapi'></script>
+  		    <script src='js/jsFunctionsArduFarmBot.js'></script>
+  		    <script>
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart); 
+ 			 </script>
+
+  <script>
+      getLocalWeatherData("Lo Barnechea");
+  </script>
 	<script	>	
 		function allumpump2(){
  $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=1')
