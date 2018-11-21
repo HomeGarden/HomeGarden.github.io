@@ -45,7 +45,7 @@
 								<p> Suivez-ici l'état de santé de votre plante </p>
 							</header>
 
-							<section id="localWeather" class="whole">
+							<section id="localWeather" >
       <h2>Local Weather Conditions at: <input type="text" id="cityNameInput" name="fname" value="Lo Barnechea">
       <button onclick="getCityData()">Show Data</button>
       <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/white.png" width="134" height="29"/> </a>
@@ -60,7 +60,7 @@
 									
 									<ul class="actions fit">
 										<li><a href="#" class="button primary fit"id = "act1On" onclick="changeField7(1)" >Allumer l'ecran'</a></li>
-										<li><a href="#" class="button fit" onclick="changeField7(0)" >Éteindre la pompe</a></li>
+										<li><a href="#" class="button fit" id = "act1Off" onclick="changeField7(0)" >Éteindre la pompe</a></li>
 								
 									</ul>
 									<ul class="actions fit">
@@ -70,7 +70,7 @@
 									</ul>
 									
 																	</section>
-<section class="whole">
+<section >
       <h2>Analog Sensors</h2>
       <div id="chart_div"></div>
     </section>
@@ -194,6 +194,8 @@
    			<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script> 
    			<script src='https://www.google.com/jsapi'></script>
   		    <script src='assets/js/jsFunctionsArduFarmBot.js'></script>
+  		   
+
   		    <script>
       google.charts.load('current', {'packages':['gauge']});
       google.charts.setOnLoadCallback(drawChart); 
@@ -201,7 +203,7 @@
 
 
   <script>
-      getLocalWeatherData("Lo Barnechea");
+      getLocalWeatherData("Lille");
   </script>
 
 	<script	>	
