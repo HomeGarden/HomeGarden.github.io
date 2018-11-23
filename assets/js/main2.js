@@ -313,7 +313,7 @@
           chart.draw(data, options);
         }, 5000);
         setInterval(function() {
-          data.setValue(2, 1, getDataField3());
+          data.setValue(2, 1, 35);
           chart.draw(data, options);
         }, 26000);
       }
