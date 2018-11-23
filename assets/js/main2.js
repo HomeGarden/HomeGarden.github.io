@@ -305,15 +305,15 @@
         chart.draw(data, options);
 
         setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          data.setValue(0, 1, getDataField1());
           chart.draw(data, options);
         }, 13000);
         setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          data.setValue(1, 1, getDataField2());
           chart.draw(data, options);
         }, 5000);
         setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          data.setValue(2, 1, getDataField3());
           chart.draw(data, options);
         }, 26000);
       }
