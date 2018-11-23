@@ -1,7 +1,7 @@
-        var channelID = 999999;
-      var readKey = "XXXXXXXXXXXXXXXX"; 
-      var writeKey = "YYYYYYYYYYYYYYY"; 
-      var cityName = " ";
+        var channelID = 622900;
+      var readKey = "ZBHS3SWDRSROL3IU"; 
+      var writeKey = "L1FF82EJCT9ZX4G0"; 
+      var cityName = "Lille";
 
       var dataField1; /* Thinkspeak data: Temperature DHT */
       var dataField2; /* Thinkspeak data: Humidity DHT */
@@ -19,85 +19,88 @@
       var localPress;
       var localWindSpeed;
       var localWindTemp; 
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
 
       function getCityData() {
-        // cityName = document.getElementById('cityNameInput').value;
-        // getLocalWeatherData(cityName); 
+         cityName = document.getElementById('cityNameInput').value;
+         getLocalWeatherData(cityName); 
 
         var localCityName = document.getElementById("cityNameInput").value;
         getLocalWeatherData(localCityName);
         cityName = localCityName;
      }
 
-      function drawChart() {
+      // function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['TempDHT', 0],
-          ['HumDHT', 0],
-          ['LuminLDR', 0],
-          ['SoilHum', 0]
-        ]);
+      //   var data = google.visualization.arrayToDataTable([
+      //     ['Label', 'Value'],
+      //     ['TempDHT', 0],
+      //     ['HumDHT', 0],
+      //     ['LuminLDR', 0],
+      //     ['SoilHum', 0]
+      //   ]);
 
 
-        var optionsT = {
-          width: 600, height: 300,
-          redFrom: 90, redTo: 100,
-          yellowFrom:71, yellowTo: 90,
-          greenFrom:59, greenTo: 71,
-          min: 0, max: 100,
-          minorTicks: 5
-        };
+      //   var optionsT = {
+      //     width: 600, height: 300,
+      //     redFrom: 90, redTo: 100,
+      //     yellowFrom:71, yellowTo: 90,
+      //     greenFrom:59, greenTo: 71,
+      //     min: 0, max: 100,
+      //     minorTicks: 5
+      //   };
   
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+      //   var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-        chart.draw(data, optionsT);
+      //   chart.draw(data, optionsT);
 
-        // Update of Gauges 
-        setInterval(function() {
-          data.setValue(0, 1, getDataField1());
-          chart.draw(data, optionsT);
-        }, 1000);
-        setInterval(function() {
-          data.setValue(1, 1, getDataField2());
-          chart.draw(data, optionsT);
-        }, 1000);
-        setInterval(function() {
-          data.setValue(2, 1, getDataField3());          
-          chart.draw(data, optionsT);
-        }, 1000);
-        setInterval(function() {
-          data.setValue(3, 1, getDataField4());      
-          chart.draw(data, optionsT);
-        }, 1000);
+      //   // Update of Gauges 
+      //   setInterval(function() {
+      //     data.setValue(0, 1, getDataField1());
+      //     chart.draw(data, optionsT);
+      //   }, 1000);
+      //   setInterval(function() {
+      //     data.setValue(1, 1, getDataField2());
+      //     chart.draw(data, optionsT);
+      //   }, 1000);
+      //   setInterval(function() {
+      //     data.setValue(2, 1, getDataField3());          
+      //     chart.draw(data, optionsT);
+      //   }, 1000);
+      //   setInterval(function() {
+      //     data.setValue(3, 1, getDataField4());      
+      //     chart.draw(data, optionsT);
+      //   }, 1000);
         
-       // Update of digital sensors/actuators
-         setInterval(function() {
-          displayDigInfo1(getDataField7());      
-        }, 1000);
-        setInterval(function() {
-          displayDigInfo2(getDataField5());      
-        }, 1000);
+      //  // Update of digital sensors/actuators
+      //    setInterval(function() {
+      //     displayDigInfo1(getDataField7());      
+      //   }, 1000);
+      //   setInterval(function() {
+      //     displayDigInfo2(getDataField5());      
+      //   }, 1000);
 
-        setInterval(function() {
-          displayDigInfo3(getDataField8());      
-        }, 1000);
-        setInterval(function() {
-          displayDigInfo4(getDataField6());      
-        }, 1000);
-        setInterval(function() {
-          getCityData();      
-        }, 60000);       
-      }   
+      //   setInterval(function() {
+      //     displayDigInfo3(getDataField8());      
+      //   }, 1000);
+      //   setInterval(function() {
+      //     displayDigInfo4(getDataField6());      
+      //   }, 1000);
+      //   setInterval(function() {
+      //     getCityData();      
+      //   }, 60000);       
+      // }   
 
    /* Functions to change data at ThingSpeak fields */      
       
       function changeField7(data) {
         $(document).ready(function(){
-            $.post("https://api.thingspeak.com/update.json",
+            $.post("https://api.thingspeak.com/update?",
             {
-              api_key: "ZZZZZZZZZZZZZZZZZZZZZ",
+              api_key: "L1FF82EJCT9ZX4G0",
               field7: data
             },
             function(){
@@ -110,7 +113,7 @@
         $(document).ready(function(){
             $.post("https://api.thingspeak.com/update.json",
             {
-              api_key: "ZZZZZZZZZZZZZZZZZZZZZ",
+              api_key: "L1FF82EJCT9ZX4G0",
               field8: data
             },
             function(){
@@ -145,9 +148,6 @@
           if (msg == 1) {x.className="on";}
           else {x.className="off";}
       }
-      
-
-
     /* Function to get data from Yahoo Wether Channel */
      function getLocalWeatherData(cityName) {
       $.get('https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast ' +
@@ -278,4 +278,42 @@
             }          
         });
         return dataField8;
+      }
+
+
+        google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Memory', 80],
+          ['CPU', 55],
+          ['Network', 68]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        setInterval(function() {
+          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          chart.draw(data, options);
+        }, 26000);
       }
