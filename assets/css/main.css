@@ -3307,7 +3307,7 @@ input, select, textarea {
 
 		}
 
-		img{
+  img{
     width: 10%;
     padding: 1%;
   }
@@ -3326,22 +3326,4 @@ input, select, textarea {
     //clear:both;  
  }
 
-  .cloudy{
-      background-image: url("../images/cloudy.png");
-      // background-repeat: no-repeat;
-}
-
-  .clear{
-      background-image: url("../images/clear.png");
-      //background-repeat: no-repeat;
-}
-
-  .showers{
-      background-image: url("../images/showers.png");
-      //background-repeat: no-repeat;
-}
-
- .general{
-      background-image: url("../images/general.png");
-      //background-repeat: no-repeat;
 }
