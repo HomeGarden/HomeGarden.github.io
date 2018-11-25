@@ -19,7 +19,7 @@
       var localPress;
       var localWindSpeed;
       var localWindTemp; 
-      
+
  
 
 
@@ -254,4 +254,13 @@
           chart.draw(data, options);
         }, 26000);
       }
+
+
+  var g = new JustGage({
+    id: "gauge",
+    value: getDataField1(),
+    min: 0,
+    max: 100,
+    title: "Visitors"
+  });
 
