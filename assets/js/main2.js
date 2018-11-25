@@ -256,11 +256,29 @@
       }
 
 
-  var g = new JustGage({
-    id: "gauge",
-    value: getDataField1(),
-    min: 0,
-    max: 100,
-    title: "Visitors"
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+    var dflt = {
+      min: 0,
+      max: 200,
+      donut: true,
+      gaugeWidthScale: 0.6,
+      counter: true,
+      hideInnerShadow: true
+    }
+
+    var gg1 = new JustGage({
+      id: 'gg1',
+      value: 125,
+      title: 'javascript call',
+      defaults: dflt
+    });
+
+    var gg2 = new JustGage({
+      id: 'gg2',
+      title: 'data-attributes',
+      defaults: dflt
+    });
+
   });
 
