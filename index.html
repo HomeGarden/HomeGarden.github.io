@@ -7,10 +7,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-
-<!-- Scripts -->
-            
+         <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <script>
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+  </script>
             <script src="assets/js/browser.min.js"></script>
             <script src="assets/js/breakpoints.min.js"></script>
             <script src="assets/js/util.js"></script>
@@ -27,6 +28,23 @@
       google.charts.load('current', {'packages':['gauge']});
       google.charts.setOnLoadCallback(drawChart); 
              </script>
+
+             <style>
+    #myChart,
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+    }
+    
+    .zc-ref {
+      display: none;
+    }
+  </style>
+	</head>
+
+<!-- Scripts -->
+           
              
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -98,6 +116,9 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
        <div id="chart_div" style="width: 799px; height: 300px;"></div>
 
+</section>
+<section >
+<div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/"> </a></div>
 </section>
     </section>
 							<section class="tiles">
