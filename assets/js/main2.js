@@ -281,10 +281,10 @@
       defaults: dflt
     });
 
-    document.getElementById('gauge_refresh').addEventListener('click', function() {
+    setInterval(function() {
         gg1.refresh(getDataField1());
         gg2.refresh(getDataField2());
-      });
+      }, 2500);
 
   });
 
