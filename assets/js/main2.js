@@ -258,7 +258,7 @@
       }
 
 
-      <script>
+    
     var myConfig = {
       backgroundColor: "#fff",
       globals: {
