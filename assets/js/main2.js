@@ -269,13 +269,14 @@
 
     var gg1 = new JustGage({
       id: 'gg1',
-      value: 125,
+      value: getDataField1(),
       title: 'javascript call',
       defaults: dflt
     });
 
     var gg2 = new JustGage({
       id: 'gg2',
+      value: getDataField2(),
       title: 'data-attributes',
       defaults: dflt
     });
