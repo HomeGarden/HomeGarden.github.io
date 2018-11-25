@@ -270,16 +270,54 @@
     var gg1 = new JustGage({
       id: 'gg1',
       value: getDataField1(),
-      title: 'javascript call',
-      defaults: dflt
+      title: 'Temperature',
+       min: 0,
+        max: 60,
+        symbol: ' °C',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        counter: true
     });
 
     var gg2 = new JustGage({
       id: 'gg2',
       value: getDataField2(),
-      title: 'data-attributes',
-      defaults: dflt
-    });
+      title: 'Humidity',
+      min: 0,
+        max: 100,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "#00ff00",
+        lo : 0,
+        hi : 50
+      },{
+        color : "#ff0000",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
+    
 
     setInterval(function() {
         gg1.refresh(getDataField1());
