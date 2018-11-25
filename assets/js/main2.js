@@ -19,8 +19,8 @@
       var localPress;
       var localWindSpeed;
       var localWindTemp; 
-      google.charts.load('current', {'packages':['gauge']});
-      google.charts.setOnLoadCallback(drawChart);
+      
+ 
 
 
       function getCityData() {
@@ -219,7 +219,7 @@
         return dataField8;
       }
 
-
+   
 
       function drawChart() {
 
