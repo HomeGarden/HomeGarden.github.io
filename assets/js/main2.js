@@ -32,68 +32,7 @@
         cityName = localCityName;
      }
 
-      // function drawChart() {
-
-      //   var data = google.visualization.arrayToDataTable([
-      //     ['Label', 'Value'],
-      //     ['TempDHT', 0],
-      //     ['HumDHT', 0],
-      //     ['LuminLDR', 0],
-      //     ['SoilHum', 0]
-      //   ]);
-
-
-      //   var optionsT = {
-      //     width: 600, height: 300,
-      //     redFrom: 90, redTo: 100,
-      //     yellowFrom:71, yellowTo: 90,
-      //     greenFrom:59, greenTo: 71,
-      //     min: 0, max: 100,
-      //     minorTicks: 5
-      //   };
-  
-
-      //   var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-      //   chart.draw(data, optionsT);
-
-      //   // Update of Gauges 
-      //   setInterval(function() {
-      //     data.setValue(0, 1, getDataField1());
-      //     chart.draw(data, optionsT);
-      //   }, 1000);
-      //   setInterval(function() {
-      //     data.setValue(1, 1, getDataField2());
-      //     chart.draw(data, optionsT);
-      //   }, 1000);
-      //   setInterval(function() {
-      //     data.setValue(2, 1, getDataField3());          
-      //     chart.draw(data, optionsT);
-      //   }, 1000);
-      //   setInterval(function() {
-      //     data.setValue(3, 1, getDataField4());      
-      //     chart.draw(data, optionsT);
-      //   }, 1000);
-        
-      //  // Update of digital sensors/actuators
-      //    setInterval(function() {
-      //     displayDigInfo1(getDataField7());      
-      //   }, 1000);
-      //   setInterval(function() {
-      //     displayDigInfo2(getDataField5());      
-      //   }, 1000);
-
-      //   setInterval(function() {
-      //     displayDigInfo3(getDataField8());      
-      //   }, 1000);
-      //   setInterval(function() {
-      //     displayDigInfo4(getDataField6());      
-      //   }, 1000);
-      //   setInterval(function() {
-      //     getCityData();      
-      //   }, 60000);       
-      // }   
-
+      
    /* Functions to change data at ThingSpeak fields */      
       
       function changeField7(data) {
@@ -288,8 +227,8 @@
 
         var data = google.visualization.arrayToDataTable([
           ['Label', 'Value'],
-          ['Memory', 80],
-          ['CPU', 55],
+          ['Temperature', 80],
+          ['Humidity', 55],
           ['Network', 68]
         ]);
 
