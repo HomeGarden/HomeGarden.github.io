@@ -377,6 +377,65 @@
       }],
       counter: true
       });
+    var gg5 = new JustGage({
+      id: 'gg5',
+      value: getDataField4(),
+      title: 'Niveau d eau',
+      min: 0,
+        max: 7000,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "#00ff00",
+        lo : 0,
+        hi : 50
+      },{
+        color : "#ff0000",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
+
+    var gg6 = new JustGage({
+      id: 'gg6',
+      value: getDataField4(),
+      title: 'Niveau d eau',
+      min: 0,
+        max: 7000,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "#00ff00",
+        lo : 0,
+        hi : 50
+      },{
+        color : "#ff0000",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
     
 
     setInterval(function() {
@@ -384,6 +443,8 @@
         gg2.refresh(getDataField2());
         gg3.refresh(getDataField3());
         gg4.refresh(getDataField4());
+         gg5.refresh(getDataField5());
+          gg6.refresh(getDataField6());
       }, 5000);
 
   });
