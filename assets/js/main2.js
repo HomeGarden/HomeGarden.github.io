@@ -112,9 +112,9 @@
             localPress = Math.round(localPress);
                 
           //document.getElementById('local_weather').innerHTML = "Local City: " + cityName;
-          document.getElementById('local_weather1').innerHTML = "At " +localDate+ " Weather is: " + generalCond;
-          document.getElementById('local_weather2').innerHTML = "Temperature: " +localTemp + " oC.       Humidity: " + localHum + " %.       Pressure: " + localPress + " milibars.";            
-          document.getElementById('local_weather3').innerHTML = "Wind Speed: " +localWindSpeed+ " Km/h. Wind Dir: " +localWindDir+ "o. Wind Temp: " +localWindTemp+ "oC";            
+          document.getElementById('local_weather1').innerHTML = "Le " +localDate+ " Le temps est : " + generalCond;
+          document.getElementById('local_weather2').innerHTML = "Temperature: " +localTemp + " °C.       Humidité de l'air: " + localHum + " %.       Pression: " + localPress + " milibars.";            
+          document.getElementById('local_weather3').innerHTML = "Vitesse du Vent: " +localWindSpeed+ " Km/h. Wind Dir: " +localWindDir+ "°. Wind Temp: " +localWindTemp+ "°C";            
         
           x=document.getElementById("localWeather");
           if (generalCond == "Cloudy" || generalCond == "Partially Cloudy") {x.className="cloudy";}

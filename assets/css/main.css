@@ -118,7 +118,7 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: #585858;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 16pt;
+		font-size: 8pt;
 		font-weight: 300;
 		line-height: 1.75;
 	}
@@ -2136,7 +2136,8 @@ input, select, textarea {
 		outline: 0;
 		padding: 0;
 		text-decoration: none;
-		width: 100%;
+		width: 30%;
+		margin-left:  40%;
 	}
 
 		input[type="text"]:invalid,
