@@ -323,7 +323,7 @@
       value: getDataField3(),
       title: 'Luminosité',
       min: 0,
-        max: 100,
+        max: 700,
         symbol: ' %',
         pointer: true,
         pointerOptions: {
@@ -350,10 +350,10 @@
 
     var gg4 = new JustGage({
       id: 'gg4',
-      value: getDataField2(),
+      value: getDataField4(),
       title: 'Niveau d eau',
       min: 0,
-        max: 100,
+        max: 7000,
         symbol: ' %',
         pointer: true,
         pointerOptions: {
@@ -384,7 +384,7 @@
         gg2.refresh(getDataField2());
         gg3.refresh(getDataField3());
         gg4.refresh(getDataField4());
-      }, 2500);
+      }, 5000);
 
   });
 
