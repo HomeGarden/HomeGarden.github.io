@@ -279,7 +279,7 @@
           toplength: -15,
           bottomlength: 10,
           bottomwidth: 12,
-          color: '#8e8e93',
+          color: 'blue',
           stroke: '#ffffff',
           stroke_width: 3,
           stroke_linecap: 'round'
@@ -317,11 +317,73 @@
       }],
       counter: true
       });
+
+    var gg3 = new JustGage({
+      id: 'gg3',
+      value: getDataField3(),
+      title: 'Luminosité',
+      min: 0,
+        max: 100,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "yellow",
+        lo : 0,
+        hi : 50
+      },{
+        color : "#ff0000",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
+
+    var gg4 = new JustGage({
+      id: 'gg4',
+      value: getDataField2(),
+      title: 'Niveau d eau',
+      min: 0,
+        max: 100,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "#00ff00",
+        lo : 0,
+        hi : 50
+      },{
+        color : "#ff0000",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
     
 
     setInterval(function() {
         gg1.refresh(getDataField1());
         gg2.refresh(getDataField2());
+        gg3.refresh(getDataField3());
+        gg4.refresh(getDataField4());
       }, 2500);
 
   });
