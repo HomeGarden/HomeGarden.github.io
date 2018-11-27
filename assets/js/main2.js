@@ -172,9 +172,7 @@
       function getDataField4() {        
         $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/4/last.json?apikey='+readKey+'&callback=?', function(data) {          
             dataField4 = (data.field4);
-            if (dataField4) {
-                dataField4 = (dataField4/1);
-            }          
+                    
         });
         return dataField4;
       }
@@ -279,12 +277,21 @@
           toplength: -15,
           bottomlength: 10,
           bottomwidth: 12,
-          color: 'blue',
-          stroke: '#ffffff',
+          color: 'orange',
+          stroke: 'white',
           stroke_width: 3,
           stroke_linecap: 'round'
         },
         gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "orange",
+        lo : 0,
+        hi : 50
+      },{
+        color : "orange",
+        lo : 50,
+        hi : 100
+      }],
         counter: true
     });
 
@@ -300,18 +307,18 @@
           toplength: -15,
           bottomlength: 10,
           bottomwidth: 12,
-          color: '#8e8e93',
-          stroke: '#ffffff',
+          color: 'blue',
+          stroke: 'white',
           stroke_width: 3,
           stroke_linecap: 'round'
         },
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "#00ff00",
+        color : "blue",
         lo : 0,
         hi : 50
       },{
-        color : "#ff0000",
+        color : "blue",
         lo : 50,
         hi : 100
       }],
@@ -341,7 +348,7 @@
         lo : 0,
         hi : 50
       },{
-        color : "#ff0000",
+        color : "yellow",
         lo : 50,
         hi : 100
       }],
@@ -353,7 +360,7 @@
       value: getDataField4(),
       title: 'Niveau d eau',
       min: 0,
-        max: 7000,
+        max: 15000,
         symbol: ' %',
         pointer: true,
         pointerOptions: {
@@ -367,11 +374,11 @@
         },
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "#00ff00",
+        color : "blue",
         lo : 0,
         hi : 50
       },{
-        color : "#ff0000",
+        color : "blue",
         lo : 50,
         hi : 100
       }],
@@ -379,10 +386,10 @@
       });
     var gg5 = new JustGage({
       id: 'gg5',
-      value: getDataField4(),
+      value: getDataField5(),
       title: 'Niveau d eau',
       min: 0,
-        max: 7000,
+        max: 150000,
         symbol: ' %',
         pointer: true,
         pointerOptions: {
@@ -409,7 +416,7 @@
 
     var gg6 = new JustGage({
       id: 'gg6',
-      value: getDataField4(),
+      value: getDataField6(),
       title: 'Niveau d eau',
       min: 0,
         max: 7000,
