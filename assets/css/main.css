@@ -2970,7 +2970,7 @@ input, select, textarea {
 		max-width: 80%;
 		height: 100%;
 		-webkit-overflow-scrolling: touch;
-		background: #585858;
+		background: #f6f6f6;
 		color: #ffffff;
 		cursor: default;
 		visibility: hidden;
@@ -3364,7 +3364,7 @@ input, select, textarea {
     }
 
     .gauge {
-      width:280px; height:200px;
+      width:260px; height:185px;
         display: inline-block;
         margin: 2em;
         margin-left: 15%;
