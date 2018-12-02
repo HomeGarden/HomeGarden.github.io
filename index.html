@@ -10,27 +10,7 @@
 
 	</head>
 
-<!-- Scripts -->
-             <script src="assets/js/jquery.min.js"></script>
-             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-            <script src="assets/js/raphael-2.1.4.min.js"></script>
-            <script src="assets/js/justgage.js"></script>
-            <script src="assets/js/browser.min.js"></script>
-            <script src="assets/js/breakpoints.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
-          
-            <script src='https://www.google.com/jsapi'></script>
-            <script src='assets/js/main2.js'></script>
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', {packages: ['gauge']});
-    google.charts.setOnLoadCallback(drawChart);
-    </script>
-           
-  <script>
-      getLocalWeatherData("Lille");
-  </script>
+
 
 
  
@@ -74,13 +54,15 @@
 							</header>
 
     
-            							
+      <div id="chart-container"></div>
       <div id="gg1" class="gauge" ></div>
       <div id="gg2" class="gauge" ></div>
       <div id="gg3" class="gauge" ></div>
       <div id="gg4" class="gauge" ></div>
       <div id="gg5" class="gauge" ></div>
       <div id="gg6" class="gauge" ></div>
+      <div id="gg7" class="gauge" ></div>
+
         
 							           
 									<ul class="actions fit">
@@ -152,7 +134,29 @@
 					</footer>
 
 			</div>
-
+<!-- Scripts -->
+             <script src="assets/js/jquery.min.js"></script>
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+             <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+            <script src="assets/js/raphael-2.1.4.min.js"></script>
+            <script src="assets/js/justgage.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+          
+            <script src='https://www.google.com/jsapi'></script>
+            <script src='assets/js/main2.js'></script>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['gauge']});
+    google.charts.setOnLoadCallback(drawChart);
+    </script>
+           
+  <script>
+      getLocalWeatherData("Lille");
+  </script>
 		
 	<script	>	
 		function allumpump2(){
@@ -172,6 +176,7 @@ function allumpump3(){
  	alert ("ALLUMAGE DE LA POMPE");
 };
 </script>
+
 
 
 	</body>
