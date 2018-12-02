@@ -1915,6 +1915,7 @@ input, select, textarea {
 		ul.actions li {
 			padding: 0 0 0 1em;
 			vertical-align: middle;
+			background-color: #f6f6f6;
 		}
 
 		ul.actions.special {
@@ -2810,6 +2811,7 @@ input, select, textarea {
 
 	#header {
 		padding: 8em 0 0.1em 0 ;
+		background-color: #f6f6f6;
 	}
 
 		#header .logo {
