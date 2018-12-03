@@ -225,39 +225,39 @@
       document.getElementById("pp").innerHTML = getDataField8();
 
 
-      function drawChart() {
+      // function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Temperature', 80],
-          ['Humidity', 55],
-          ['Network', 68]
-        ]);
+      //   var data = google.visualization.arrayToDataTable([
+      //     ['Label', 'Value'],
+      //     ['Temperature', 80],
+      //     ['Humidity', 55],
+      //     ['Network', 68]
+      //   ]);
 
-        var options = {
-          width: 400, height: 120,
-          redFrom: 90, redTo: 100,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
+      //   var options = {
+      //     width: 400, height: 120,
+      //     redFrom: 90, redTo: 100,
+      //     yellowFrom:75, yellowTo: 90,
+      //     minorTicks: 5
+      //   };
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+      //   var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-        chart.draw(data, options);
+      //   chart.draw(data, options);
 
-        setInterval(function() {
-          data.setValue(0, 1, getDataField1());
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, getDataField2());
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 35);
-          chart.draw(data, options);
-        }, 26000);
-      }
+      //   setInterval(function() {
+      //     data.setValue(0, 1, getDataField1());
+      //     chart.draw(data, options);
+      //   }, 13000);
+      //   setInterval(function() {
+      //     data.setValue(1, 1, getDataField2());
+      //     chart.draw(data, options);
+      //   }, 5000);
+      //   setInterval(function() {
+      //     data.setValue(2, 1, 35);
+      //     chart.draw(data, options);
+      //   }, 26000);
+      // }
 
 
   document.addEventListener("DOMContentLoaded", function(event) {
@@ -495,3 +495,15 @@
   });
 
 
+function initElement()
+{
+  var p = document.getElementById("foo");
+  // NOTE: showAlert(); ou showAlert(param); NE fonctionne PAS ici.
+  // Il faut fournir une valeur de type function (nom de fonction déclaré ailleurs ou declaration en ligne de fonction).
+  p.onclick = showAlert;
+};
+
+function showAlert()
+{
+  alert("Evènement de click détecté");
+}

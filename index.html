@@ -16,7 +16,8 @@
  
 
              
-	<body class="is-preload">
+	<body onload="initElement();" class="is-preload">
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -54,8 +55,9 @@
 						<div class="inner">
 							
 
-
+<span id="foo">
       <div id="gg1" class="gauge" ></div>
+      </span>
       <div id="gg2" class="gauge" ></div>
       <div id="gg3" class="gauge" ></div>
       <div id="gg4" class="gauge" ></div>
@@ -82,7 +84,7 @@
 					</div>
 					<ul class="actions fit">
 					   <li><a   <button id = "act1On" class="button" onclick="changeField7(1)">  PUMP ON </button></a></li>
-      					<li><a<button id = "act1Off" class="button" onclick="changeField7(0)"> PUMP OFF</button></a></li>
+      					<li><a <button id = "act1Off" class="button" onclick="changeField7(0)"> PUMP OFF</button></a></li>
 
      				 </ul>
 <section align="center" id="localWeather" >

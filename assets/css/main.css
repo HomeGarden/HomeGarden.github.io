@@ -2811,7 +2811,7 @@ input, select, textarea {
 
 	#header {
 		padding: 8em 0 0.1em 0 ;
-		background-color: #f6f6f6;
+		background-color: #EEEEEE;
 	}
 
 		#header .logo {
@@ -2970,8 +2970,8 @@ input, select, textarea {
 		max-width: 80%;
 		height: 100%;
 		-webkit-overflow-scrolling: touch;
-		background: #f6f6f6;
-		color: #ffffff;
+		background: #535353;
+		color: #E1E1E1;
 		cursor: default;
 		visibility: hidden;
 		z-index: 10002;
