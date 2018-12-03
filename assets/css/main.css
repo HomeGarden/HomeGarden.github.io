@@ -29,6 +29,19 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+iframe{
+
+width="450" height="260" style="border: 1px solid #cccccc;
+
+}
+
+
+
+.iframe{
+width="450" height="260" style="border: 1px solid #cccccc;
+}
+
+
 body {
 	line-height: 1;
 }
