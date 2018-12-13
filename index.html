@@ -25,7 +25,7 @@
 					<header id="header">
 						<div class="inner">
 							<header>
-								<h1>HomeGarden Platform </h1>
+								<h1>HomeGarden Platform :  Tableau de Bord</h1>
 								<p> Suivez-ici l'état de santé de votre plante. </p>
 							</header>
 
@@ -99,8 +99,8 @@
 						</div>
 					</div>
 					<ul class="actions fit">
-					   <li><a   <button id = "act1On" class="button" onclick="changeField7(1)">  PUMP ON </button></a></li>
-      					<li><a <button id = "act1Off" class="button" onclick="changeField7(0)"> PUMP OFF</button></a></li>
+					   <li><a   <button id = "act1On" class="button" onclick="allumpump()">  PUMP ON </button></a></li>
+      					<li><a <button id = "act1Off" class="button" onclick="eteindrepump()"> PUMP OFF</button></a></li>
 
      				 </ul>
 <section align="center" id="localWeather" >
@@ -176,7 +176,16 @@
   <script>
       getLocalWeatherData("Lille");
   </script>
-		
+	<script	>		
+		function allumpump(){
+ $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_ON&position=1')
+ 	alert ("ALLUMAGE DE LA POMPE");
+};
+function eteindrepump(){
+ $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
+ 	alert ("ETEINDRE LA POMPE");
+};
+</script>
 	<script	>	
 		function allumpump2(){
  $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=1')

@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Push button, send message</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 48px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: #FF0000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 48px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+	  </head>
+  <body>
+	<table>
+		<tr>
+			<td align = "center"><input class="button" type="button" id="btn4" value="ff" /></td>
+			<td align = "center"><input class="button"  type="button" id="btn3" value="playpause" /></td>
+			<td align = "center"><input class="button"  type="button" id="btn5" value="rew" /></td>
+		</tr>	
+		<tr height = "100px"><td>&nbsp</td></tr>		
+		<tr>
+			<td align = "center"></td>
+			<td align = "center"><input  class="button2"  type="button" id="btn6" value="up" /></td>
+			<td align = "center"></td>
+		</tr>
+		<tr>
+			<td align = "center"><input  class="button" type="button" id="btn7" value="left" /></td>
+			<td align = "center"></td>
+			<td align = "center"><input  class="button" type="button" id="btn8" value="right" /></td>
+		</tr>
+		<tr>
+			<td align = "center"></td>
+			<td align = "center"><input  class="button2" type="button" id="btn9" value="down" /></td>
+			<td align = "center"></td>
+		</tr>
+		<tr height = "100px"><td>&nbsp</td></tr>
+		<tr>
+			<td align = "center"></td>
+			<td align = "center"><input class="button"  type="button" id="btn10" value="select" /></td>
+			<td align = "center"></td>
+		</tr>
+		<tr height = "100px"><td>&nbsp</td></tr>
+		<tr>
+			<td align = "center"><input  class="button2" type="button" id="btn1" value="back" /></td>
+			<td align = "center"><input  class="button2" type="button" id="btn2" value="home" /></td>
+			<td align = "center"></td>
+
+		</tr>
+
+
+	</table>
+    <script type="text/javascript">
+	var btn1 = document.getElementById('btn1'),
+		btn2 = document.getElementById('btn2');
+		btn3 = document.getElementById('btn3'),
+		btn4 = document.getElementById('btn4');
+		btn5 = document.getElementById('btn5'),
+		btn6 = document.getElementById('btn6');
+		btn7 = document.getElementById('btn7'),
+		btn8 = document.getElementById('btn8');
+		btn9 = document.getElementById('btn9'),
+		btn10 = document.getElementById('btn10');
+		btn1.addEventListener('click', show_me, false); // i am not IE friendly
+		btn2.addEventListener('click', show_me, false); // you can replace show_me with any function you would like.
+		btn3.addEventListener('click', show_me, false); // i am not IE friendly
+		btn4.addEventListener('click', show_me, false); // you can replace show_me with any function you would like.
+		btn5.addEventListener('click', show_me, false); // i am not IE friendly
+		btn6.addEventListener('click', show_me, false); // you can replace show_me with any function you would like.
+		btn7.addEventListener('click', show_me, false); // i am not IE friendly
+		btn8.addEventListener('click', show_me, false); // you can replace show_me with any function you would like.
+		btn9.addEventListener('click', show_me, false); // i am not IE friendly
+		btn10.addEventListener('click', show_me, false); // you can replace show_me with any function you would like.
+
+      var clientID = "ID-" + Math.round(Math.random() * 1000);
+      var client = new Paho.MQTT.Client("192.168.0.18", 9001, clientID);
+
+      client.connect({onSuccess:onConnect});
+
+      function onConnect() {
+        console.log("connected");
+      }
+		function show_me() {
+			//alert(this.value + ' was clicked'); // this references the element which the click event was invoked on.
+
+			var message = new Paho.MQTT.Message("q" + this.value);
+			message.destinationName = "home/skyq";
+			client.send(message);			}
+
+    </script>
+
+  </body>
+</html>
