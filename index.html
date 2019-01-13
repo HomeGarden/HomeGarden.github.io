@@ -181,29 +181,15 @@
  $.post('https://api.thingspeak.com/apps/thinghttp/send_request?api_key=Z1HW4FUQD6N3N2BP')
  	alert ("ALLUMAGE DE LA POMPE");
 };
+function pumpon(){
+ $.post('https://api.thingspeak.com/talkbacks/30333/commands.json?apikey=937VWNG8QT9S35J6&command_string=TURN_ON&position=1');
+ }
 function eteindrepump(){
  $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
  	alert ("ETEINDRE LA POMPE");
 };
 </script>
-	<script	>	
-		function allumpump2(){
- $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=1')
- 	alert ("ALLUMAGE DE L'ECCCCCCCCRAN");
-};
-</script>
-<script	>	
-		function eteindrepump2(){
- $.post('https://api.thingspeak.com/update?api_key=L1FF82EJCT9ZX4G0&field7=0')
- alert ("Pompe eteinte");
- };
-</script>
-<script	>
-function allumpump3(){
- $.post('https://api.thingspeak.com/talkbacks/29242/commands.json?apikey=EW0LN8G375039TMX&command_string=ALLUM&position=1')
- 	alert ("ALLUMAGE DE LA POMPE");
-};
-</script>
+
 
 
 
