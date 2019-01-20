@@ -11,10 +11,6 @@
 	</head>
 
 
-
-
- 
-
              
 	<body onload="initElement();" class="is-preload">
 
@@ -81,28 +77,21 @@
 <a href="#" class="close">X</a>
     </div>
 </div>
-
-        <!-- 
-							           
-									<ul class="actions fit">
-										<li><a href="#" class="button primary fit" id = "act1On" onclick="changeField7(1)" >Allumer l'ecran'</a></li>
-										<li><a href="#" class="button fit" id = "act1Off" onclick="changeField7(0)" >Éteindre la pompe</a></li>
-								
-									</ul>
-									<ul class="actions fit">
-										<li><a href="#" class="button primary fit" onclick="allumpump3()" >Allumer les Leds</a></li>
-										<li><a href="#" class="button fit">Éteindre les Leds</a></li>
-								
-									</ul>
-									                             -->
-							
+									                           		
 						</div>
 					</div>
+
+
+
+
+
 					<ul class="actions fit">
 					   <li><a   <button id = "act1On" class="button" onclick="pumpon()">  PUMP ON </button></a></li>
       					<li><a <button id = "act1Off" class="button" onclick="eteindrepump()"> PUMP OFF</button></a></li>
 
      				 </ul>
+
+
 <section align="center" id="localWeather" >
                                           <h2>Météo à Lille <input align=center type="text" id="cityNameInput" name="fname" value="Lille"><button onclick="getCityData()">Show Data</button>
                                           
@@ -117,37 +106,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-								</ul>
+								<h2></h2>
 							</section>
 						</div>
 					</footer>
@@ -168,6 +127,7 @@
             <script src='https://www.google.com/jsapi'></script>
             <script src='assets/js/main2.js'></script>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <script type="text/javascript">
     google.charts.load('current', {packages: ['gauge']});
     google.charts.setOnLoadCallback(drawChart);
@@ -176,7 +136,9 @@
   <script>
       getLocalWeatherData("Lille");
   </script>
-	<script	>		
+
+
+	<script>		
 		function allumpump(){
  $.post('https://api.thingspeak.com/apps/thinghttp/send_request?api_key=Z1HW4FUQD6N3N2BP')
  	alert ("ALLUMAGE DE LA POMPE");
