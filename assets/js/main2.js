@@ -522,3 +522,52 @@ $(document).ready(function () {
     });
     
 });
+
+
+function btn_LED_ON() {
+           $.ajax({
+               url: "https://api.thingspeak.com/talkbacks/30333/commands?key=937VWNG8QT9S35J6&command_string=TURN_ON&position=1",
+               type: 'POST',
+               success: function(data) {
+               //called when successful
+               console.log(data);
+               //$('#results').append(data);
+             }
+           });
+       }
+       
+       function btn_LED_OFF() {
+           $.ajax({
+               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_OFF&position=1",
+               type: 'POST',
+               success: function(data) {
+               //called when successful
+               console.log(data);
+               //$('#results').append(data);
+             }
+           });
+       }
+       
+       function btn_LED_BLINK() {
+           $.ajax({
+               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK&position=1",
+               type: 'POST',
+               success: function(data) {
+               //called when successful
+               console.log(data);
+               //$('#results').append(data);
+             }
+           });
+       }
+       
+       function btn_LED_BLINK_FAST() {
+           $.ajax({
+               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK_FAST&position=1",
+               type: 'POST',
+               success: function(data) {
+               //called when successful
+               console.log(data);
+               //$('#results').append(data);
+             }
+           });
+       }

@@ -129,6 +129,7 @@
             <script src='https://www.google.com/jsapi'></script>
             <script src='assets/js/main2.js'></script>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js" ></script>
 
   <script type="text/javascript">
     google.charts.load('current', {packages: ['gauge']});
@@ -139,59 +140,6 @@
       getLocalWeatherData("Lille");
   </script>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js" ></script>
-    
-   <script type="text/javascript">    
-       function btn_LED_ON() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/3033/commands?key=937VWNG8QT9S35J6&command_string=TURN_ON&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-           alert ("TEST LED 3033");
-       }
-       
-       function btn_LED_OFF() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_OFF&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
-       
-       function btn_LED_BLINK() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
-       
-       function btn_LED_BLINK_FAST() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK_FAST&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
-       
-   </script>
 
 
 
