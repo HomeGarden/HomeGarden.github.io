@@ -83,9 +83,11 @@
 
 
 
+</br>
 
 
 					<ul class="actions fit">
+<input id="LED_ON" width=200px type="button" value="ADD LED ON" onclick="btn_LED_ON();" />
 					   <li><a   <button id = "act1On" class="button" onclick="btn_LED_ON()">  PUMP ON </button></a></li>
       					<li><a <button id = "act1Off" class="button" onclick="allumpump()"> PUMP OFF</button></a></li>
 
@@ -191,21 +193,7 @@
        
    </script>
 
-	<script>		
-		function allumpump(){
- $.post('https://api.thingspeak.com/apps/thinghttp/send_request?api_key=Z1HW4FUQD6N3N2BP')
- 	alert ("ALLUMAGE DE LA POMPE");
-};
 
-function pumpon(){
- $.post('https://api.thingspeak.com/talkbacks/30333/commands.json?apikey=937VWNG8QT9S35J6&command_string=TURN_ON&position=1');
- alert ("ALLUMAGE DE LA POMPE 3033");
- }
-function eteindrepump(){
- $.post('https://api.thingspeak.com/talkbacks/26642/commands.json?apikey=8E41GA04PIKO6J29&command_string=TURN_OFF&position=2')
- 	alert ("ETEINDRE LA POMPE");
-};
-</script>
 
 
 
