@@ -89,7 +89,6 @@
 
 
 					<ul class="actions fit">
-<input id="LED_ON" width=200px type="button" value="ADD LED ON" onclick="btn_LED_ON();" />
 					   <li><a   <button id = "act1On" class="button" onclick="btn_LED_ON()">  PUMP ON </button></a></li>
       					<li><a <button id = "act1Off" class="button" onclick="allumpump()"> PUMP OFF</button></a></li>
 
@@ -172,29 +171,7 @@
            });
        }
        
-       function btn_LED_BLINK() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
-       
-       function btn_LED_BLINK_FAST() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK_FAST&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
+
        
    </script>
 
