@@ -23,7 +23,7 @@
 							<header>
 								<h1>HomeGarden Platform :  Tableau de Bord</h1>
 								<p> Suivez-ici l'état de santé de votre plante. </p>
-								<input id="LED_ON" width=200px type="button" value="ADD LED ON" onclick="btn_LED_ON();" />
+								<input id="LED_ON" width=200px type="button" value="ADD LED ON" onclick="btn_PUMP_ON();" />
 
 							</header>
 
@@ -90,7 +90,7 @@
 
 					<ul class="actions fit">
 					   <li><a   <button id = "act1On" class="button" onclick="btn_LED_ON()">  PUMP ON </button></a></li>
-      					<li><a <button id = "act1Off" class="button" onclick="allumpump()"> PUMP OFF</button></a></li>
+      					<li><a <button id = "act1Off" class="button" onclick="btn_LED_OFF()"> PUMP OFF</button></a></li>
 
      				 </ul>
 
@@ -147,7 +147,7 @@
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js" ></script>
     
    <script type="text/javascript">    
-       function btn_LED_ON() {
+       function btn_PUMP_ON() {
            $.ajax({
                url: "https://api.thingspeak.com/talkbacks/30333/commands?key=937VWNG8QT9S35J6&command_string=TURN_ON&position=1",
                type: 'POST',
@@ -159,9 +159,20 @@
            });
        }
        
+        function btn_LED_ON() {
+           $.ajax({
+               url: "https://api.thingspeak.com/talkbacks/30333/commands?key=937VWNG8QT9S35J6&command_string=LED_ON&position=1",
+               type: 'POST',
+               success: function(data) {
+               //called when successful
+               console.log(data);
+               //$('#results').append(data);
+             }
+           });
+       }
        function btn_LED_OFF() {
            $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_OFF&position=1",
+               url: "https://api.thingspeak.com/talkbacks/30333/commands?key=937VWNG8QT9S35J6&command_string=LED_OFF&position=1",
                type: 'POST',
                success: function(data) {
                //called when successful
