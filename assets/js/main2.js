@@ -399,7 +399,7 @@
     var gg5 = new JustGage({
       id: 'gg5',
       value: getDataField5(),
-      title: 'Activation Pompe',
+      title: 'Activité Pompe',
       min: 0,
         max: 1,
         symbol: ' ',
@@ -429,7 +429,7 @@
     var gg6 = new JustGage({
       id: 'gg6',
       value: getDataField6(),
-      title: 'Activation LED',
+      title: 'Activité LED',
       min: 0,
         max: 1,
         symbol: ' ',
