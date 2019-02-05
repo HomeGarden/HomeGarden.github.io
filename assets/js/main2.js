@@ -26,9 +26,6 @@
 
 
       function getCityData() {
-         cityName = document.getElementById('cityNameInput').value;
-         getLocalWeatherData(cityName); 
-
         var localCityName = document.getElementById("cityNameInput").value;
         getLocalWeatherData(localCityName);
         cityName = localCityName;
@@ -94,6 +91,7 @@
       $.get('https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast ' +
             'where woeid in (select woeid from geo.places(1) where text="'+cityName+'")&format=json', function (data) {
           console.log(data);
+
           localDate = (data.query.results.channel.item.condition.date);
           generalCond = (data.query.results.channel.item.condition.text);
           localTemp   = (data.query.results.channel.item.condition.temp-32.00)/1.80;
@@ -219,7 +217,15 @@
         return field8;
       }
 
-
+      function getDataField1() {           
+            $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/1/last.json?apikey='+readKey+'&callback=?', function(data) {          
+                dataField1 = data.field1;
+                if (dataField1) {
+                    dataField1 = (dataField1/1);
+                }          
+            });
+            return dataField1;
+      }
 
 
       document.getElementById("pp").innerHTML = getDataField8();
@@ -334,7 +340,7 @@
     var gg3 = new JustGage({
       id: 'gg3',
       value: getDataField3(),
-      title: 'Luminosité',
+      title: 'Humidité sol',
       min: 0,
         max: 700,
         symbol: ' %',
@@ -366,7 +372,7 @@
       value: getDataField4(),
       title: 'Niveau d eau',
       min: 0,
-        max: 15000,
+        max: 100,
         symbol: ' %',
         pointer: true,
         pointerOptions: {
@@ -393,67 +399,7 @@
     var gg5 = new JustGage({
       id: 'gg5',
       value: getDataField5(),
-      title: 'Niveau d eau',
-      min: 0,
-        max: 150000,
-        symbol: ' %',
-        pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: '#8e8e93',
-          stroke: '#ffffff',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
-        gaugeWidthScale: 0.6,
-        customSectors: [{
-        color : "#00ff00",
-        lo : 0,
-        hi : 50
-      },{
-        color : "#ff0000",
-        lo : 50,
-        hi : 100
-      }],
-      counter: true
-      });
-
-    var gg6 = new JustGage({
-      id: 'gg6',
-      value: getDataField6(),
-      title: 'Niveau d eau',
-      min: 0,
-        max: 7000,
-        symbol: ' %',
-        pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: '#8e8e93',
-          stroke: '#ffffff',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
-        gaugeWidthScale: 0.6,
-        customSectors: [{
-        color : "#00ff00",
-        lo : 0,
-        hi : 50
-      },{
-        color : "#ff0000",
-        lo : 50,
-        hi : 100
-      }],
-      counter: true
-      });
-
-    var gg7 = new JustGage({
-      id: 'gg7',
-      value: getDataField7(),
-      title: 'Activation pompe',
+      title: 'Activation Pompe',
       min: 0,
         max: 1,
         symbol: ' ',
@@ -479,6 +425,38 @@
       }],
       counter: true
       });
+
+    var gg6 = new JustGage({
+      id: 'gg6',
+      value: getDataField6(),
+      title: 'Activation LED',
+      min: 0,
+        max: 1,
+        symbol: ' ',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "#FF2D00  ",
+        lo : 0,
+        hi : 0
+      },{
+        color : "#00FF1B",
+        lo : 1,
+        hi : 1
+      }],
+      counter: true
+      });
+
+    
     
 
     setInterval(function() {
@@ -524,50 +502,6 @@ $(document).ready(function () {
 });
 
 
-function btn_LED_ON() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/30333/commands?key=937VWNG8QT9S35J6&command_string=TURN_ON&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
-       
-       function btn_LED_OFF() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_OFF&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
-       
-       function btn_LED_BLINK() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
-       
-       function btn_LED_BLINK_FAST() {
-           $.ajax({
-               url: "https://api.thingspeak.com/talkbacks/63/commands?key=29Z3EVEWFNBYC9NV&command_string=LED_BLINK_FAST&position=1",
-               type: 'POST',
-               success: function(data) {
-               //called when successful
-               console.log(data);
-               //$('#results').append(data);
-             }
-           });
-       }
+function alerte(x) {
+  alert(x);
+}
