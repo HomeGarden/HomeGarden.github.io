@@ -466,7 +466,6 @@
         gg4.refresh(getDataField4());
          gg5.refresh(getDataField5());
           gg6.refresh(getDataField6());
-          gg7.refresh(getDataField7());
           getDataField8();
       }, 5000);
 
@@ -483,7 +482,7 @@ function showAlert()
 {
   alert("Evènement de click détecté");
 
-}
+};
 
 $(document).ready(function () {
     $(".popup").hide();
@@ -502,6 +501,3 @@ $(document).ready(function () {
 });
 
 
-function alerte(x) {
-  alert(x);
-}
