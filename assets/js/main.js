@@ -183,3 +183,325 @@
 			});
 
 })(jQuery);
+
+      var dataField1; /* Thinkspeak data: Temperature DHT */
+      var dataField2; /* Thinkspeak data: Humidity DHT */
+      var dataField3; /* Thinkspeak data: Luminosity - LDR (0% -Dark ==> 100% Full clear) */
+      var dataField4; /* Thinkspeak data: Soil Humidity */
+      var dataField5; /* Thinkspeak data: Echo from Device 1 commanded by Field 7 */
+      var dataField6; /* Thinkspeak data: Echo from Device 2 commanded by Field 8 */
+      var dataField7; /* Thinkspeak data: Command to device 1*/
+      var dataField8; /* Thinkspeak data: Command to device 2*/
+         var channelID = 622900;
+      var readKey = "ZBHS3SWDRSROL3IU"; 
+      var writeKey = "L1FF82EJCT9ZX4G0"; 
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+    var dflt = {
+      min: 0,
+      max: 200,
+      donut: true,
+      gaugeWidthScale: 0.6,
+      counter: true,
+      hideInnerShadow: true
+    }
+
+    var gg1 = new JustGage({
+      id: 'gg1',
+      value: getDataField1(),
+      title: 'Température',
+       min: 0,
+        max: 60,
+        symbol: ' °C',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: 'orange',
+          stroke: 'white',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "orange",
+        lo : 0,
+        hi : 50
+      },{
+        color : "orange",
+        lo : 50,
+        hi : 100
+      }],
+        counter: true
+    });
+
+    var gg2 = new JustGage({
+      id: 'gg2',
+      value: getDataField2(),
+      title: 'Humidité ambiante',
+      min: 0,
+        max: 100,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: 'blue',
+          stroke: 'white',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "blue",
+        lo : 0,
+        hi : 50
+      },{
+        color : "blue",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
+
+    var gg3 = new JustGage({
+      id: 'gg3',
+      value: getDataField3(),
+      title: 'Humidité de la terre',
+      min: 0,
+        max: 700,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "yellow",
+        lo : 0,
+        hi : 50
+      },{
+        color : "yellow",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
+
+    var gg4 = new JustGage({
+      id: 'gg4',
+      value: getDataField4(),
+      title: 'Niveau d eau',
+      min: 0,
+        max: 100,
+        symbol: ' %',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "blue",
+        lo : 0,
+        hi : 50
+      },{
+        color : "blue",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+      });
+    var gg5 = new JustGage({
+      id: 'gg5',
+      value: getDataField5(),
+      title: 'Activité Pompe',
+      min: 0,
+        max: 1,
+        symbol: ' ',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "#FF2D00  ",
+        lo : 0,
+        hi : 0
+      },{
+        color : "#00FF1B",
+        lo : 1,
+        hi : 1
+      }],
+      counter: true
+      });
+
+    var gg6 = new JustGage({
+      id: 'gg6',
+      value: getDataField6(),
+      title: 'Activité LED',
+      min: 0,
+        max: 1,
+        symbol: ' ',
+        pointer: true,
+        pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap: 'round'
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [{
+        color : "#FF2D00  ",
+        lo : 0,
+        hi : 0
+      },{
+        color : "#00FF1B",
+        lo : 1,
+        hi : 1
+      }],
+      counter: true
+      });
+
+    
+    
+
+    setInterval(function() {
+        gg1.refresh(getDataField1());
+        gg2.refresh(getDataField2());
+        gg3.refresh(getDataField3());
+        gg4.refresh(getDataField4());
+         gg5.refresh(getDataField5());
+          gg6.refresh(getDataField6());
+      }, 5000);
+
+  });
+
+        function getAllChannelDataTS(){
+        getDataField1();
+        getDataField2();
+        getDataField3();
+        getDataField4();
+        getDataField5();
+        getDataField6();
+        getDataField7();
+
+      }
+
+      function getDataField1() {           
+            $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/1/last.json?apikey='+readKey+'&callback=?', function(data) {          
+                dataField1 = data.field1;
+                if (dataField1) {
+                    dataField1 = (dataField1/1);
+                }          
+            });
+            return dataField1;
+      }
+
+      function getDataField2() {
+        $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/2/last.json?apikey='+readKey+'&callback=?', function(data) {          
+            dataField2 = data.field2;
+            if (dataField2) {
+                dataField2 = (dataField2/1);
+            }          
+        });
+        return dataField2;
+      }
+
+      function getDataField3() {
+        $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/3/last.json?apikey='+readKey+'&callback=?', function(data) {          
+            dataField3 = data.field3;
+            if (dataField3) {
+                dataField3 = (dataField3/1);
+            }          
+        });
+        return dataField3;
+      }
+
+      function getDataField4() {        
+        $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/4/last.json?apikey='+readKey+'&callback=?', function(data) {          
+            dataField4 = (data.field4);
+                    
+        });
+        return dataField4;
+      }
+
+      function getDataField5() {  
+        $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/5/last.json?apikey='+readKey+'&callback=?', function(data) {          
+            dataField5 = data.field5;
+            if (dataField5) {
+                ddataField5 = (dataField5/1);
+            }          
+        });
+        return dataField5;
+      }
+
+      function getDataField6() {        
+        $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/6/last.json?apikey='+readKey+'&callback=?', function(data) {          
+            dataField6 = data.field6;
+            if (dataField6) {
+                ddataField6 = (dataField6/1);
+            }          
+        });
+        return dataField6;
+      }
+
+      function getDataField7() {      
+        $.getJSON('https://api.thingspeak.com/channels/'+channelID+'/field/7/last.json?apikey='+readKey+'&callback=?', function(data) {          
+            dataField7 = data.field7;
+            if (dataField7) {
+                ddataField7 = (dataField7/1);
+            }          
+        });
+        return dataField7;
+      }
+function initElement()
+{
+  var p = document.getElementById("foo");
+  p.onclick = showAlert;
+};
+
+function showAlert()
+{
+  alert("Evènement de click détecté");
+
+};
+
+$(document).ready(function () {
+    $(".popup").hide();
+    $(".openpop").click(function (e) {
+        e.preventDefault();
+        $("iframe").attr("src", $(this).attr('href'));
+        $(".gg1").fadeOut('slow');
+        $(".popup").fadeIn('slow');
+    });
+
+    $(".close").click(function () {
+        $(this).parent().fadeOut("slow");
+        $(".links").fadeIn("slow");
+    });
+    
+});
