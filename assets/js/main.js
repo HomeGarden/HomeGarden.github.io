@@ -303,7 +303,7 @@
       title: 'Niveau d eau',
       min: 0,
         max: 100,
-        symbol: ' %',
+        symbol: ' cl',
         pointer: true,
         pointerOptions: {
           toplength: -15,
