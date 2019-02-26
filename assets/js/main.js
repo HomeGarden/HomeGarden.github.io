@@ -226,11 +226,11 @@
         },
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "orange",
+        color : "07FFFF",
         lo : 0,
         hi : 50
       },{
-        color : "orange",
+        color : "FF9607",
         lo : 50,
         hi : 100
       }],
@@ -256,11 +256,11 @@
         },
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "blue",
+        color : "AFB0B0",
         lo : 0,
         hi : 50
       },{
-        color : "blue",
+        color : "02E3E3",
         lo : 50,
         hi : 100
       }],
@@ -286,11 +286,11 @@
         },
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "yellow",
+        color : "EB1212",
         lo : 0,
         hi : 50
       },{
-        color : "yellow",
+        color : "0770FF",
         lo : 50,
         hi : 100
       }],
@@ -316,7 +316,7 @@
         },
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "blue",
+        color : "EB1212",
         lo : 0,
         hi : 50
       },{
