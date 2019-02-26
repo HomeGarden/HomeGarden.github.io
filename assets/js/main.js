@@ -272,7 +272,7 @@
       value: getDataField3(),
       title: 'Humidité de la terre',
       min: 0,
-        max: 700,
+        max: 100,
         symbol: ' %',
         pointer: true,
         pointerOptions: {
