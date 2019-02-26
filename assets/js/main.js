@@ -215,15 +215,6 @@
         max: 39,
         symbol: ' °C',
         pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: 'orange',
-          stroke: 'white',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "07FFFF",
@@ -245,15 +236,6 @@
         max: 100,
         symbol: ' %',
         pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: 'blue',
-          stroke: 'white',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "AFB0B0",
@@ -275,15 +257,6 @@
         max: 100,
         symbol: ' %',
         pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: '#8e8e93',
-          stroke: '#ffffff',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "EB1212",
@@ -305,15 +278,6 @@
         max: 100,
         symbol: ' cl',
         pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: '#8e8e93',
-          stroke: '#ffffff',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "EB1212",
@@ -334,15 +298,6 @@
         max: 1,
         symbol: ' ',
         pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: '#8e8e93',
-          stroke: '#ffffff',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "#FF2D00  ",
@@ -364,15 +319,6 @@
         max: 1,
         symbol: ' ',
         pointer: true,
-        pointerOptions: {
-          toplength: -15,
-          bottomlength: 10,
-          bottomwidth: 12,
-          color: '#8e8e93',
-          stroke: '#ffffff',
-          stroke_width: 3,
-          stroke_linecap: 'round'
-        },
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "#FF2D00  ",
