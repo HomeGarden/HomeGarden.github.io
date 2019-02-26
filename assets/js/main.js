@@ -214,14 +214,14 @@
        min: 0,
         max: 39,
         symbol: ' °C',
-        pointer: true,
+        pointer: false,
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "07FFFF",
+        color : "blue",
         lo : 0,
         hi : 15
       },{
-        color : "FF9607",
+        color : "red",
         lo : 15,
         hi : 30
       }],
@@ -235,14 +235,14 @@
       min: 0,
         max: 100,
         symbol: ' %',
-        pointer: true,
+        pointer: false,
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "AFB0B0",
+        color : "grey",
         lo : 0,
         hi : 50
       },{
-        color : "02E3E3",
+        color : "orange",
         lo : 50,
         hi : 100
       }],
@@ -256,14 +256,14 @@
       min: 0,
         max: 100,
         symbol: ' %',
-        pointer: true,
+        pointer: false,
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "EB1212",
+        color : "red",
         lo : 0,
         hi : 50
       },{
-        color : "0770FF",
+        color : "blue",
         lo : 50,
         hi : 100
       }],
@@ -277,10 +277,10 @@
       min: 0,
         max: 100,
         symbol: ' cl',
-        pointer: true,
+        pointer: false,
         gaugeWidthScale: 0.6,
         customSectors: [{
-        color : "EB1212",
+        color : "red",
         lo : 0,
         hi : 50
       },{
