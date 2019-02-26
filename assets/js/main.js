@@ -213,6 +213,7 @@
       title: 'Température',
        min: 0,
         max: 39,
+        decimals: 1,
         symbol: ' °C',
         pointer: false,
         gaugeWidthScale: 0.6,
@@ -221,7 +222,7 @@
         lo : 0,
         hi : 15
       },{
-        color : "red",
+        color : "orange",
         lo : 15,
         hi : 30
       }],
@@ -260,11 +261,18 @@
         symbol: ' %',
         pointer: false,
         gaugeWidthScale: 0.6,
-        customSectors: [{
+        customSectors: [
+        {
         color : "red",
         lo : 0,
+        hi : 25
+      },
+        {
+        color : "orange",
+        lo : 25,
         hi : 50
-      },{
+      },
+      {
         color : "blue",
         lo : 50,
         hi : 100
@@ -282,11 +290,18 @@
         symbol: ' cl',
         pointer: false,
         gaugeWidthScale: 0.6,
-        customSectors: [{
+        customSectors: [
+        {
         color : "red",
         lo : 0,
+        hi : 25
+      },
+        {
+        color : "orange",
+        lo : 25,
         hi : 50
-      },{
+      },
+      {
         color : "blue",
         lo : 50,
         hi : 100
@@ -300,7 +315,6 @@
       min: 0,
         max: 1,
         symbol: ' ',
-        pointer: true,
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "#FF2D00  ",
@@ -321,7 +335,6 @@
       min: 0,
         max: 1,
         symbol: ' ',
-        pointer: true,
         gaugeWidthScale: 0.6,
         customSectors: [{
         color : "#FF2D00  ",
