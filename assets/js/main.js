@@ -212,7 +212,7 @@
       value: getDataField1(),
       title: 'Température',
        min: 0,
-        max: 60,
+        max: 39,
         symbol: ' °C',
         pointer: true,
         pointerOptions: {
@@ -228,11 +228,11 @@
         customSectors: [{
         color : "07FFFF",
         lo : 0,
-        hi : 50
+        hi : 15
       },{
         color : "FF9607",
-        lo : 50,
-        hi : 100
+        lo : 15,
+        hi : 30
       }],
         counter: true
     });
